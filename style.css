@@ -1147,21 +1147,3 @@ border-radius:50px;
 font-size:13px;
 font-weight:bold;
 }
-
-@media(max-width:768px){
-
-.menu-box{
-display:flex;
-overflow-x:auto;
-scroll-snap-type:x mandatory;
-padding-bottom:15px;
-gap:20px;
-}
-
-.card{
-min-width:300px;
-scroll-snap-align:start;
-flex-shrink:0;
-}
-
-}
