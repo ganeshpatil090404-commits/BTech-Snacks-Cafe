@@ -21,13 +21,8 @@ overflow-x:hidden;
 transition:0.4s;
 overflow-y:auto;
 width:100%;
-overflow-x:hidden;
 position:relative;
 padding-top:90px;
-body{
-min-width:1400px;
-overflow-x:auto;
-}
 }
 
 /* =========================
@@ -1152,53 +1147,7 @@ border-radius:50px;
 font-size:13px;
 font-weight:bold;
 }
-/* =========================
-   MOBILE DESKTOP LOOK FIX
-========================= */
 
-@media(max-width:768px){
-
-
-nav{
-padding:20px 30px;
-}
-
-nav ul li a{
-font-size:24px;
-}
-
-.content h1{
-font-size:90px;
-}
-
-.content p{
-font-size:30px;
-}
-
-.menu h1,
-.features h1,
-.about h1,
-.reviews h1,
-.feedback h1,
-.cart-section h1{
-font-size:65px;
-}
-
-.card h2{
-font-size:38px;
-}
-
-.card p{
-font-size:34px;
-}
-
-.student-btn,
-.order-btn{
-font-size:24px;
-padding:22px 40px;
-}
-
-}
 @media(max-width:768px){
 
 .menu-box{
@@ -1206,6 +1155,7 @@ display:flex;
 overflow-x:auto;
 scroll-snap-type:x mandatory;
 padding-bottom:15px;
+gap:20px;
 }
 
 .card{

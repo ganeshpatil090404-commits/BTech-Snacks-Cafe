@@ -480,46 +480,56 @@ if(!input) return;
 input.value = Math.max(0, Number(input.value || 0) + change);
 
 updatePopupTotal();
-}function sendWhatsAppOrder() {
+}
+function sendWhatsAppOrder() {
 
-let tea = Number(document.getElementById("teaQty")?.value || 0);
-let coffee = Number(document.getElementById("coffeeQty")?.value || 0);
-let burger = Number(document.getElementById("burgerQty")?.value || 0);
-let pizza = Number(document.getElementById("pizzaQty")?.value || 0);
+const items = [
+{ name:"Tea", id:"teaQty", price:10 },
+{ name:"Coffee", id:"coffeeQty", price:15 },
+{ name:"Cold Coffee", id:"coldcoffeeQty", price:60 },
+{ name:"Fries", id:"friesQty", price:40 },
+{ name:"Vadapav", id:"vadapavQty", price:15 },
+{ name:"Maggie", id:"maggieQty", price:35 },
+{ name:"Samosa", id:"samosaQty", price:15 },
+{ name:"Poha", id:"pohaQty", price:15 },
+{ name:"Pasta", id:"pastaQty", price:35 },
+{ name:"Misal", id:"misalQty", price:60 }
+];
 
-if (tea === 0 && coffee === 0 && burger === 0 && pizza === 0) {
-    showToast("Please Select Items", "error");
-    return;
+let total = 0;
+let itemsText = "";
+let hasItems = false;
+
+items.forEach(item=>{
+
+let qty = Number(document.getElementById(item.id)?.value || 0);
+
+if(qty > 0){
+
+hasItems = true;
+
+let itemTotal = qty * item.price;
+
+total += itemTotal;
+
+itemsText += `${item.name} - ₹${item.price} × ${qty} = ₹${itemTotal}\n\n`;
+
 }
 
-let total =
-    (tea * 10) +
-    (coffee * 15) +
-    (burger * 50) +
-    (pizza * 120);
+});
+
+if(!hasItems){
+
+showToast("Please Select Items","error");
+
+return;
+
+}
 
 let hour = new Date().getHours();
 
-if (hour >= 23 || hour < 8) {
-    total += 10;
-}
-
-let items = "";
-
-if (tea > 0) {
-    items += `Tea - ₹10 × ${tea} = ₹${tea * 10}\n\n`;
-}
-
-if (coffee > 0) {
-    items += `Coffee - ₹20 × ${coffee} = ₹${coffee * 15}\n\n`;
-}
-
-if (burger > 0) {
-    items += `Burger - ₹50 × ${burger} = ₹${burger * 50}\n\n`;
-}
-
-if (pizza > 0) {
-    items += `Pizza - ₹120 × ${pizza} = ₹${pizza * 120}\n\n`;
+if(hour >= 23 || hour < 8){
+total += 10;
 }
 
 let message = `☕ BTech Snacks Cafe Order
@@ -528,7 +538,9 @@ let message = `☕ BTech Snacks Cafe Order
 
 🛒 Order Items:
 
-${items}━━━━━━━━━━━━━━
+${itemsText}
+
+━━━━━━━━━━━━━━
 
 💰 Total Amount: ₹${total}
 
@@ -544,12 +556,18 @@ ${items}━━━━━━━━━━━━━━
 
 let phone = "918767027966";
 
-let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+let url =
+"https://wa.me/" +
+phone +
+"?text=" +
+encodeURIComponent(message);
 
-window.open(url, "_blank");
+window.open(url,"_blank");
 
 showToast("Order Sent ❤️");
+
 closePopup();
+
 }
 function openCartPanel(){
 document.getElementById("cartPanel").classList.add("open");
