@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=1400">
+
+ <meta name="theme-color" content="#000000">
+<title>BTech Snacks Cafe</title><link rel="icon" 
+type="image/png"
+ href="logo.png">
+
+
+<meta name="description"
+content="BTech Snacks Cafe Jalgaon - Best student cafe for coffee, snacks, fast WiFi, coding vibes and online orders.">
+
+<meta name="keywords"
+content="BTech Snacks Cafe Jalgaon, cafe in jalgaon, student cafe jalgaon, couple cafe">
+
+<link rel="stylesheet"
+href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+     
+
+<!-- =========================
+     LOADER
+========================= -->
+
+<div class="loader">
+
+<h1>BTech Snacks Cafe ☕</h1>
+
+</div>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+<div class="logo">
+
+<img src="logo.png"
+alt="logo"
+loading="lazy">
+
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#menu">Menu</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#reviews">Reviews</a></li>
+
+<li><a href="#feedback">Feedback</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+
+<div class="nav-buttons">
+
+<button class="cart-btn"
+onclick="document.querySelector('.cart-section').scrollIntoView({behavior:'smooth'})">
+
+🛒 Cart <span id="cartCount">0</span>
+
+</button>
+
+<button class="nav-order"
+onclick="openPopup()">
+
+Order Online
+
+</button>
+
+<button class="nav-whatsapp"
+onclick="openPopup()">
+
+WhatsApp Order
+
+</button>
+
+</div>
+
+</nav>
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero reveal"
+id="home">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h2>
+
+STUDY • EAT • CHILL
+
+</h2>
+<div class="student-banner">
+👨‍🎓 Made For Students • ❤️ Chill Vibes • 🌙 Night Cafe
+</div>
+
+<h1>
+
+BTECH SNACKS CAFE
+
+</h1>
+
+<p id="changingText">
+
+Best Place For Students ❤️
+
+</p>
+
+<div class="search-box">
+
+<input type="text"
+id="search"
+placeholder="Search Food... 🍔">
+
+</div>
+<div class="cafe-status">
+
+🏪 Offline Cafe : 8 AM - 11 PM &nbsp; • &nbsp; 📦 Online Orders : 24×7 Available
+
+</div>
+
+<div id="clock"></div>
+
+<div class="hero-buttons">
+     
+
+<button class="student-btn"
+onclick="openPopup()">
+
+ORDER ONLINE FOR STUDENTS ❤️
+
+</button>
+
+<button class="order-btn"
+onclick="openPopup()">
+
+WhatsApp Order
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section class="menu reveal"
+id="menu">
+
+<h1>
+
+Popular Items 🍔
+
+</h1>
+
+<div class="menu-box">
+
+<!-- Tea -->
+<div class="card">
+<img src="tea.jpg"
+alt="Tea"
+loading="lazy">
+
+<h2>Tea</h2>
+<p>₹10</p>
+
+<div class="quantity-box">
+<button onclick="decreaseQty(this)">-</button>
+<input type="number" value="0">
+<button onclick="increaseQty(this)">+</button>
+</div>
+</div>
+
+<!-- Coffee -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+alt="Coffee"
+loading="lazy">
+
+<h2>Coffee</h2>
+<p>₹15</p>
+
+<div class="quantity-box">
+<button onclick="decreaseQty(this)">-</button>
+<input type="number" value="0">
+<button onclick="increaseQty(this)">+</button>
+</div>
+</div>
+
+<!-- Cold Coffee -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop"
+alt="Cold Coffee"
+loading="lazy">
+
+<h2>Cold Coffee</h2>
+<p>₹60</p>
+
+<div class="quantity-box">
+<button onclick="decreaseQty(this)">-</button>
+<input type="number" value="0">
+<button onclick="increaseQty(this)">+</button>
+</div>
+</div>
+
+<!-- French Fries -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?q=80&w=1200&auto=format&fit=crop"
+alt="French Fries"
+loading="lazy">
+
+<h2>French Fries</h2>
+<p>₹40</p>
+
+<div class="quantity-box">
+<button onclick="decreaseQty(this)">-</button>
+<input type="number" value="0">
+<button onclick="increaseQty(this)">+</button>
+</div>
+</div>
+
+<!-- Vadapav -->
+<div class="card">
+<img src="vadapav.jpg"
+alt="Vadapav"
+loading="lazy">
+
+
+<h2>Vadapav</h2>
+<p>₹15</p>
+
+<div class="quantity-box">
+<button onclick="decreaseQty(this)">-</button>
+<input type="number" value="0">
+<button onclick="increaseQty(this)">+</button>
+</div>
+</div>
+
+<!-- Maggie -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?q=80&w=1200&auto=format&fit=crop"
+alt="Maggie"
+loading="lazy">
+
+<h2>Maggie</h2>
+<p>₹35</p>
+
+<div class="quantity-box">
+<button onclick="decreaseQty(this)">-</button>
+<input type="number" value="0">
+<button onclick="increaseQty(this)">+</button>
+</div>
+</div>
+
+<!-- Samosa -->
+<div class="card">
+<img src="samosa.jpg"
+alt="Samosa"
+loading="lazy">
+
+<h2>Samosa</h2>
+<p>₹15</p>
+
+<div class="quantity-box">
+<button onclick="decreaseQty(this)">-</button>
+<input type="number" value="0">
+<button onclick="increaseQty(this)">+</button>
+</div>
+</div>
+
+<!-- Poha -->
+<div class="card">
+<img src="poha.jpg"
+alt="Poha"
+loading="lazy">
+
+<h2>Poha</h2>
+<p>₹15</p>
+
+<div class="quantity-box">
+<button onclick="decreaseQty(this)">-</button>
+<input type="number" value="0">
+<button onclick="increaseQty(this)">+</button>
+</div>
+</div>
+
+<!-- Pasta -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1200&auto=format&fit=crop"
+alt="Pasta"
+loading="lazy">
+
+<h2>Pasta</h2>
+<p>₹35</p>
+
+<div class="quantity-box">
+<button onclick="decreaseQty(this)">-</button>
+<input type="number" value="0">
+<button onclick="increaseQty(this)">+</button>
+</div>
+</div>
+
+<!-- Misal -->
+<div class="card">
+<img src="misal.jpg"
+alt="Misal"
+loading="lazy">
+
+<h2>Misal</h2>
+<p>₹60</p>
+
+<div class="quantity-box">
+<button onclick="decreaseQty(this)">-</button>
+<input type="number" value="0">
+<button onclick="increaseQty(this)">+</button>
+</div>
+</div>
+
+</section>
+
+<!-- =========================
+     CART SECTION
+========================= -->
+
+<section class="cart-section reveal">
+
+<h1>
+
+🛒 Your Cart
+
+</h1>
+
+<div id="cartItems">
+
+<p class="empty-cart">
+
+Cart Is Empty 😢
+
+</p>
+
+</div>
+
+<h2 id="cartTotal">
+
+Total: ₹0
+
+</h2>
+
+<button onclick="placeCartOrder()">
+
+Place Full Order
+
+</button>
+
+</section>
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="features reveal"
+id="services">
+
+<h1>
+
+Our Services ⚡
+
+</h1>
+
+<div class="feature-box">
+
+<div class="feature">
+
+<h2>📶 Free WiFi</h2>
+
+</div>
+
+<div class="feature">
+
+<h2>☕ Coding Friendly</h2>
+
+</div>
+
+<div class="feature">
+
+<h2>❤️ Couple Friendly</h2>
+
+</div>
+
+<div class="feature">
+
+<h2>📚 Study Environment</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about reveal"
+id="about">
+
+<h1>
+
+Why Students Love Us ❤️
+
+</h1>
+
+<div class="about-box">
+
+<div class="about-text">
+
+<p>
+
+BTech Snacks Cafe is perfect for engineering students.
+Coding vibes, tasty food, fast WiFi and late night study atmosphere.
+
+</p>
+
+</div>
+
+<div class="about-image">
+
+<img src="logo.png"
+alt="logo"
+loading="lazy">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section class="reviews reveal"
+id="reviews">
+
+<h1>
+
+Student Reviews ⭐
+
+</h1>
+
+<div class="review-box"
+id="reviewContainer">
+
+</div>
+
+</section>
+
+<!-- =========================
+     FEEDBACK
+========================= -->
+
+<section class="feedback reveal"
+id="feedback">
+
+<h1>
+
+Send Feedback 💬
+
+</h1>
+
+<div class="feedback-box">
+
+<input type="text"
+id="name"
+placeholder="Your Name">
+
+<textarea id="message"
+placeholder="Write Your Feedback..."></textarea>
+
+<select id="rating">
+
+<option value="5">⭐⭐⭐⭐⭐</option>
+
+<option value="4">⭐⭐⭐⭐</option>
+
+<option value="3">⭐⭐⭐</option>
+
+<option value="2">⭐⭐</option>
+
+<option value="1">⭐</option>
+
+</select>
+
+<button onclick="sendFeedback()">
+
+Submit Feedback
+
+</button>
+
+</div>
+
+</section>
+
+<!-- =========================
+     ORDER POPUP
+========================= -->
+
+<div class="order-popup"
+id="orderPopup">
+
+<div class="popup-box">
+
+<div class="popup-top">
+
+<h1>🍔 Order Online</h1>
+
+<span class="close-cross"
+onclick="closePopup()">
+
+✖
+
+</span>
+
+</div>
+
+<p class="timing">
+
+🏪 Offline Cafe Timing:
+<b>8:00 AM To 11:00 PM</b>
+
+</p>
+
+<p class="timing">
+
+📦 Online Orders:
+<b>24×7 Available</b>
+
+</p>
+
+<p class="night-alert">
+
+⚠ After 11 PM Extra ₹10 Delivery Charge
+
+</p>
+
+
+<div class="popup-menu">
+
+<!-- Tea -->
+<div class="popup-item">
+<span>☕ Tea — ₹10</span>
+
+<div class="qty-control">
+<button onclick="changeQty('teaQty',-1)">-</button>
+
+<input type="number"
+id="teaQty"
+value="0">
+
+<button onclick="changeQty('teaQty',1)">+</button>
+</div>
+</div>
+
+<!-- Coffee -->
+<div class="popup-item">
+<span>☕ Coffee — ₹15</span>
+
+<div class="qty-control">
+<button onclick="changeQty('coffeeQty',-1)">-</button>
+
+<input type="number"
+id="coffeeQty"
+value="0">
+
+<button onclick="changeQty('coffeeQty',1)">+</button>
+</div>
+</div>
+
+<!-- Cold Coffee -->
+<div class="popup-item">
+<span>🥤 Cold Coffee — ₹60</span>
+
+<div class="qty-control">
+<button onclick="changeQty('coldcoffeeQty',-1)">-</button>
+
+<input type="number"
+id="coldcoffeeQty"
+value="0">
+
+<button onclick="changeQty('coldcoffeeQty',1)">+</button>
+</div>
+</div>
+
+<!-- French Fries -->
+<div class="popup-item">
+<span>🍟 French Fries — ₹40</span>
+
+<div class="qty-control">
+<button onclick="changeQty('friesQty',-1)">-</button>
+
+<input type="number"
+id="friesQty"
+value="0">
+
+<button onclick="changeQty('friesQty',1)">+</button>
+</div>
+</div>
+
+<!-- Vadapav -->
+<div class="popup-item">
+<span>🍔 Vadapav — ₹15</span>
+
+<div class="qty-control">
+<button onclick="changeQty('vadapavQty',-1)">-</button>
+
+<input type="number"
+id="vadapavQty"
+value="0">
+
+<button onclick="changeQty('vadapavQty',1)">+</button>
+</div>
+</div>
+
+<!-- Maggie -->
+<div class="popup-item">
+<span>🍜 Maggie — ₹35</span>
+
+<div class="qty-control">
+<button onclick="changeQty('maggieQty',-1)">-</button>
+
+<input type="number"
+id="maggieQty"
+value="0">
+
+<button onclick="changeQty('maggieQty',1)">+</button>
+</div>
+</div>
+
+<!-- Samosa -->
+<div class="popup-item">
+<span>🥟 Samosa — ₹15</span>
+
+<div class="qty-control">
+<button onclick="changeQty('samosaQty',-1)">-</button>
+
+<input type="number"
+id="samosaQty"
+value="0">
+
+<button onclick="changeQty('samosaQty',1)">+</button>
+</div>
+</div>
+
+<!-- Poha -->
+<div class="popup-item">
+<span>🍛 Poha — ₹15</span>
+
+<div class="qty-control">
+<button onclick="changeQty('pohaQty',-1)">-</button>
+
+<input type="number"
+id="pohaQty"
+value="0">
+
+<button onclick="changeQty('pohaQty',1)">+</button>
+</div>
+</div>
+
+<!-- Pasta -->
+<div class="popup-item">
+<span>🍝 Pasta — ₹35</span>
+
+<div class="qty-control">
+<button onclick="changeQty('pastaQty',-1)">-</button>
+
+<input type="number"
+id="pastaQty"
+value="0">
+
+<button onclick="changeQty('pastaQty',1)">+</button>
+</div>
+</div>
+
+<!-- Misal -->
+<div class="popup-item">
+<span>🍲 Misal — ₹60</span>
+
+<div class="qty-control">
+<button onclick="changeQty('misalQty',-1)">-</button>
+
+<input type="number"
+id="misalQty"
+value="0">
+
+<button onclick="changeQty('misalQty',1)">+</button>
+</div>
+</div>
+
+</div>
+
+
+<h2 id="totalPrice">
+
+Total: ₹0
+
+</h2>
+
+<button onclick="sendWhatsAppOrder()">
+
+Place Order On WhatsApp
+
+</button>
+
+</div>
+
+</div>
+
+<!-- DARK MODE -->
+
+<button id="modeBtn"
+class="mode-btn">
+
+🌙
+
+</button>
+
+<!-- TOP BUTTON -->
+
+<div class="top-btn">
+
+⬆
+
+</div>
+
+<!-- FLOATING WHATSAPP -->
+
+<button class="whatsapp"
+onclick="openPopup()">
+
+💬
+
+</button>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<h2>
+
+📍 MH19 Corner,
+<h2>Near Government Engineering Back Gate,</h2> 
+
+</h2>
+<h2> Bhushan Colony, Jalgaon</h2> 
+
+</h2>
+
+<p>
+
+📞 8767027966
+
+</p>
+
+<p>
+
+🏪 Offline Timing:
+8 AM To 11 PM
+
+</p>
+
+<p>
+
+📦 Online Orders:
+24×7 Available
+
+</p>
+
+<p>
+
+⚠ After 11 PM Extra ₹10 Charge
+
+</p>
+
+</footer>
+
+<!-- TOAST -->
+
+<div id="toast"></div>
+
+<!-- FIREBASE -->
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<!-- MAIN JS -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
