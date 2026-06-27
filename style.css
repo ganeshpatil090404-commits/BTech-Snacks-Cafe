@@ -1182,22 +1182,27 @@ padding:2px 7px;
 }
 
 }
-/* =========================
-   MENU DESKTOP VIEW ONLY
-========================= */
+/* MENU DESKTOP VIEW ONLY */
 
 @media(max-width:768px){
 
 .menu-box{
-display:grid;
-grid-template-columns:repeat(4,300px);
+display:flex;
 overflow-x:auto;
 gap:20px;
-padding-bottom:20px;
+padding-bottom:15px;
+scroll-snap-type:x mandatory;
+-webkit-overflow-scrolling:touch;
+}
+
+.menu-box::-webkit-scrollbar{
+display:none;
 }
 
 .card{
-min-width:300px;
+min-width:320px;
+flex-shrink:0;
+scroll-snap-align:start;
 }
 
 }
