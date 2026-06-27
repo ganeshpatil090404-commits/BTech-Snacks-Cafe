@@ -392,6 +392,10 @@ time:Date.now()
 });
 
 showToast("Feedback Sent ❤️");
+
+document.getElementById("name").value = "";
+document.getElementById("message").value = "";
+document.getElementById("rating").value = "5";
 }
 
 
