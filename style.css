@@ -1182,3 +1182,22 @@ padding:2px 7px;
 }
 
 }
+/* =========================
+   MENU DESKTOP VIEW ONLY
+========================= */
+
+@media(max-width:768px){
+
+.menu-box{
+display:grid;
+grid-template-columns:repeat(4,300px);
+overflow-x:auto;
+gap:20px;
+padding-bottom:20px;
+}
+
+.card{
+min-width:300px;
+}
+
+}
