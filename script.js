@@ -273,9 +273,13 @@ showToast("Cart Is Empty","error");
 return;
 }
 
-let msg = `🍽️ *BTech Snacks Cafe Order*
+let msg = `☕📚 *BTech Snacks Cafe*
 
 ━━━━━━━━━━━━━━
+
+👋 Hello Cafe Team,
+
+I would like to place my order 😄
 
 🛒 *Order Items:*
 
@@ -284,24 +288,35 @@ let msg = `🍽️ *BTech Snacks Cafe Order*
 let total = 0;
 
 cart.forEach(p=>{
-msg += `${p.item} - ₹${p.price} × ${p.qty} = ₹${p.price * p.qty}\n`;
+
+msg += `🍔 ${p.item}
+₹${p.price} × ${p.qty} = ₹${p.price * p.qty}
+
+`;
+
 total += p.price * p.qty;
+
 });
 
 msg += `
 ━━━━━━━━━━━━━━
 
-💰 *Total Amount: ₹${total}*
+💰 *Total Amount:* ₹${total}
 
 ━━━━━━━━━━━━━━
 
-🕒 *Offline Cafe Timing:*
-8 AM To 11 PM
+🎓 Student Friendly Cafe
+⚡ Fast Service
+☕ Coffee + Coding Vibes
+📚 Perfect Study Spot
 
-🌐 *Online Orders:*
-24×7 Available
+🕒 *Cafe Timing:*
+Offline Cafe → 8 AM to 11 PM
+Online Orders → 24×7 Available
 
-🙏 Please confirm my order`;
+🙏 Please confirm my order.
+
+Thank you ❤️`;
 
 let phone = "918767027966";
 
@@ -536,27 +551,33 @@ if(hour >= 23 || hour < 8){
 total += 10;
 }
 
-let message = `☕ BTech Snacks Cafe Order
+let message = `☕📚 *BTech Snacks Cafe*
 
 ━━━━━━━━━━━━━━
 
-🛒 Order Items:
+👋 Hello Cafe Team,
+
+I would like to place my order 😄
+
+🛒 *Order Details:*
 
 ${itemsText}
 
 ━━━━━━━━━━━━━━
 
-💰 Total Amount: ₹${total}
+💰 *Total Amount:* ₹${total}
 
 ━━━━━━━━━━━━━━
 
-🕒 Offline Cafe Timing:
-8 AM To 11 PM
+🎓 Fueling Students With
+Coffee • Snacks • Coding • Chill Vibes ⚡
 
-🌐 Online Orders:
-24×7 Available
+🕒 *Cafe Timing:*
+Offline Cafe → 8 AM to 11 PM
+Online Orders → 24×7 Available
 
-✅ Please confirm my order`;
+🙏 Please confirm my order.
+Thank you ❤️`;
 
 let phone = "918767027966";
 
